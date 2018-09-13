@@ -1,0 +1,5 @@
+/node_modules/
+/src/css/
+/**/package-lock.json
+/**/Thumbs.db
+/**/*.DS_Store
