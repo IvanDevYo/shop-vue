@@ -42,7 +42,7 @@ var gulp           = require('gulp'),
 
     gulp.task('watch', ['styles', 'webpack', 'browser-sync'], function() {
         gulp.watch('src/sass/**/*.scss', ['styles']);
-        gulp.watch('src/**/*.js', ['webpack']);
+        gulp.watch(['src/common.js', 'src/router.js'], ['webpack']);
         gulp.watch('src/**/*.vue', ['webpack']);
         gulp.watch('src/*.html', browserSync.reload);
     });

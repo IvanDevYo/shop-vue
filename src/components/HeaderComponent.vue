@@ -345,7 +345,7 @@
 import Vue from 'vue';
 
 export default {
-    
+    name: 'HeaderComponent',
 }
 </script>
 
