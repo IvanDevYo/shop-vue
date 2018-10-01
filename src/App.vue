@@ -8,22 +8,18 @@
 </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import Component from 'vue-class-component';
+<script>
+import Vue from 'vue';
 import HeaderComponent from './components/HeaderComponent.vue';
 import FooterComponent from './components/FooterComponent.vue';
 import ContentComponent from './components/ContentComponent.vue';
-@Component({
-  components: {
-    HeaderComponent,
-    FooterComponent,
-    ContentComponent
-  }
-})
-  export default class App extends Vue {
-    public message: string = 'hello';
-  }
+export default {
+    components: {
+      HeaderComponent,
+      FooterComponent,
+      ContentComponent
+    }
+}
 </script>
 
 

@@ -230,17 +230,11 @@
 				</div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
-import Component from 'vue-class-component';
-@Component({
-  components: {
+export default {
     
-  }
-})
-  export default class LeftColumn extends Vue {
-    public message: string = 'hello';
-  }
+}
 </script>
 
 

@@ -2,25 +2,19 @@
   <div class="content">
     <div class="container row-content">
       <left-column></left-column>
-      <home></home>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import Component from 'vue-class-component';
+<script>
+import Vue from 'vue';
 import LeftColumn from './LeftColumn.vue';
-import Home from './Home.vue';
-@Component({
-  components: {
-    LeftColumn,
-    Home
-  }
-})
-  export default class ContentComponent extends Vue {
-    public message: string = 'hello';
-  }
+
+export default {
+    components: {
+      LeftColumn
+    }
+}
 </script>
 
 

@@ -173,16 +173,11 @@
 	</footer>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import Component from 'vue-class-component';
-@Component({
-  components: {
+<script>
+import Vue from 'vue';
+
+  export default {
     
-  }
-})
-  export default class FooterComponent extends Vue {
-    public message: string = 'hello';
   }
 </script>
 

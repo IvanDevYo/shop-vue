@@ -34,8 +34,6 @@
     "gulp-util": "^3.0.8",
     "imagemin-pngquant": "^6.0.0",
     "rimraf": "^2.6.2",
-    "ts-loader": "^5.0.0",
-    "typescript": "^3.0.3",
     "vue-loader": "^15.4.2",
     "vue-template-compiler": "^2.5.17",
     "vueify": "^9.4.1",
