@@ -256,7 +256,7 @@
 						</div>
 						<div class="filter__bottom">
 							<div class="filter__founded">
-								Найдено 586 товаров
+								Найдено {{ necessaryProducts.length }} товаров
 							</div>
 							<div class="filter__bottom-buttons">
 								<a href="#" class="button-lost">
@@ -295,7 +295,12 @@
 							</div>
 						</div>
 						<div class="row catalog__products-list">
-							<product-card v-for="(product, index) in necessaryProducts" :product="product" :key="index"></product-card>
+							<template v-if="necessaryProducts.length">
+								<product-card v-for="(product, index) in necessaryProducts" :product="product" :key="index"></product-card>
+							</template>
+							<template v-else>
+								Ничего нет
+							</template>
 						</div>
 						<div class="load__more">
 							<a href="#" class="load__more-link">
