@@ -1,0 +1,61 @@
+<template>
+    <div class="col-lg-4 col-md-6 product__card-container">
+								<a href="#" class="product__card">
+									<div class="product__card-image">
+										<img :src="product.img" alt="" class="product__card-pic">
+									</div>
+									<div class="product__card-title">
+										{{ product.name }}
+									</div>
+									<div class="product__card-bottom">
+										<div class="product__card-art">
+											Артикуль. 00-111-2323-222
+										</div>
+										<div class="product__card-availability available">
+											<span>В наличии</span>
+										</div>
+										<div class="row">
+											<div class="col-6">
+												<div class="product__card-link_container">
+													<button class="product__card-button">
+														<img src="img/shopping-cart.png" alt="" class="product__card-icon">
+														<span>В корзину</span>
+													</button>
+												</div>
+											</div>
+											<div class="col-6 no-padding-left">
+												<div class="product__card-old-price"></div>
+												<div class="product__card-price">
+													{{ formatPrice(product.price) }} <span>руб</span>	
+												</div>
+												<div class="product__card-price-ad">
+													за шт.
+												</div>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+</template>
+
+<script>
+import Vue from 'vue'
+
+export default {
+    name: 'ProductCard',
+    props: [
+        'product'
+    ],
+    methods: {
+        formatPrice(price) {
+            price = price + '';
+            return price.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')
+        }
+    }
+}
+</script>
+
+
+<style lang="scss">
+
+</style>
