@@ -1,16 +1,31 @@
 import Vue from 'vue'
 
 const state = {
-    products: []
+    products: [],
+    results: []
 }
 
 const mutations = {
     addProducts(state, data) {
         state.products = data;
+    },
+    search(state, query) {
+        let items = state.products,
+            res = [];
+        for(let i = 0; i < items.length; i++) {
+            if(~items[i].name.indexOf(query)) {
+                res.push(items[i])
+            }
+        }
+        console.log(res)
+        state.results = res;
     }
 }
 
 const getters = {
+    getSearch(state) {
+        return state.results
+    },
     necessaryProducts: state => id => {
         let items = state.products,
             necessaryItems = [];
@@ -20,10 +35,6 @@ const getters = {
             }
         }
         return necessaryItems;
-    },
-    search: state => query => {
-        let items = state.products;
-        
     },
     discountProducts(state) {
         let items = state.products,

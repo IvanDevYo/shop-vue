@@ -12,4 +12,5 @@ export const store = new Vuex.Store({
         categoryes,
         products
     },
+    strict: process.env.NODE_ENV !== 'production'
 });

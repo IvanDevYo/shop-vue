@@ -20,11 +20,12 @@ export default {
     },
     methods: {
         search() {
-            console.log(this.searchQuery);
+            this.$store.commit('products/search', this.searchQuery)
+            this.$router.push('search')
         }
     },
     computed: {
-        ...mapGetters('products', ['search'])
+        
     }
 }
 </script>
