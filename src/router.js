@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from './views/Home.vue'
 import Catalog from './views/Catalog.vue'
+import SearchResults from './views/SearchResults.vue'
 
 Vue.use(VueRouter);
 
@@ -14,6 +15,10 @@ const routes = [
         path: '/catalog/:category', 
         name: 'catalog',
         component: Catalog 
+    },
+    { 
+        path: '/search',
+        component: SearchResults 
     }
 ]
 

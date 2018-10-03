@@ -18,7 +18,11 @@ export default {
       HeaderComponent,
       FooterComponent,
       ContentComponent
-    }
+    },
+	created: function() {
+    this.$store.dispatch('categoryes/loadCategoryes');
+    this.$store.dispatch('products/loadProducts');
+	}
 }
 </script>
 

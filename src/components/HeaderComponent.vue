@@ -252,9 +252,9 @@
 					<div class="row">
 						<div class="col-lg-3 col-sm-6">
 							<div class="logo">
-								<a href="/" class="logo0link">
+								<router-link to="/" class="logo0link">
 									<img src="img/logo.png" alt="" class="logo-pic">
-								</a>
+								</router-link>
 								<div class="logo__texts">
 									<ul class="logo__texts-list">
 										<li class="logo__texts-item">
@@ -328,12 +328,7 @@
 							</nav>
 						</div>
 						<div class="col-lg-5 col-md-6">
-							<div class="site__search">
-								<input type="text" placeholder="Поиск по сайту" class="site__search-input">
-								<a href="#" class="site__search-link">
-									<img src="img/searcher.png" alt="" class="site__search-pic">
-								</a>
-							</div>
+							<search v-on:cl="ss()"></search>
 						</div>
 					</div>
 				</div>
@@ -342,10 +337,19 @@
 </template>
 
 <script>
-import Vue from 'vue';
+import Vue from 'vue'
+import Search from './Search.vue'
 
 export default {
-    name: 'HeaderComponent',
+	name: 'HeaderComponent',
+	components: {
+		Search
+	},
+	methods: {
+		ss() {
+            console.log(this.searchQuery);
+        }
+	}
 }
 </script>
 

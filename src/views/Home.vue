@@ -100,131 +100,12 @@
 							</div>
 						</div>
 					</div>
-					<div class="discount">
+					<div class="discount" v-if="discountProducts.length">
 						<div class="title_aftered">
 							Акции и скидки
 						</div>
 						<div class="row discount-list">
-							<div class="col-lg-4 col-md-6 product__card-container">
-								<a href="#" class="product__card">
-									<div class="product__card-discount">
-										<span>-10%</span>
-									</div>
-									<div class="product__card-image">
-										<img src="img/cotel-1.png" alt="" class="product__card-pic">
-									</div>
-									<div class="product__card-title">
-										Котел напольный BAXI SLIM EF 1.22, энергонезависимый 22 кВт, котел напольный СЛИМ
-									</div>
-									<div class="product__card-bottom">
-										<div class="product__card-art">
-											Артикуль. 00-111-2323-222
-										</div>
-										<div class="product__card-availability available">
-											<span>В наличии</span>
-										</div>
-										<div class="row">
-											<div class="col-6">
-												<div class="product__card-link_container">
-													<button class="product__card-button">
-														<img src="img/shopping-cart.png" alt="" class="product__card-icon">
-														<span>В корзину</span>
-													</button>
-												</div>
-											</div>
-											<div class="col-6 no-padding-left">
-												<div class="product__card-old-price">14 900</div>
-												<div class="product__card-price">
-													12 100 <span>руб</span>	
-												</div>
-												<div class="product__card-price-ad">
-													за шт.
-												</div>
-											</div>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="col-lg-4 col-md-6 product__card-container">
-								<a href="#" class="product__card">
-									<div class="product__card-discount">
-										<span>-5%</span>
-									</div>
-									<div class="product__card-image">
-										<img src="img/cotel-2.png" alt="" class="product__card-pic">
-									</div>
-									<div class="product__card-title">
-										Котел газовый настенный Viessmann Vitopend 100-W двухконтурный
-									</div>
-									<div class="product__card-bottom">
-										<div class="product__card-art">
-											Артикуль. 00-111-2323-222
-										</div>
-										<div class="product__card-availability available">
-											<span>В наличии</span>
-										</div>
-										<div class="row">
-											<div class="col-6">
-												<div class="product__card-link_container">
-													<button class="product__card-button">
-														<img src="img/shopping-cart.png" alt="" class="product__card-icon">
-														<span>В корзину</span>
-													</button>
-												</div>
-											</div>
-											<div class="col-6 no-padding-left">
-												<div class="product__card-old-price">54 900</div>
-												<div class="product__card-price">
-													47 100 <span>руб</span>	
-												</div>
-												<div class="product__card-price-ad">
-													за шт.
-												</div>
-											</div>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="col-lg-4 col-md-6 product__card-container">
-								<a href="#" class="product__card">
-									<div class="product__card-discount">
-										<span>-7%</span>
-									</div>
-									<div class="product__card-image">
-										<img src="img/cotel-3.png" alt="" class="product__card-pic">
-									</div>
-									<div class="product__card-title">
-										Котел газовый настенный BOSCH GAZ 4000 W битермический
-									</div>
-									<div class="product__card-bottom">
-										<div class="product__card-art">
-											Артикуль. 00-111-2323-222
-										</div>
-										<div class="product__card-availability available">
-											<span>В наличии</span>
-										</div>
-										<div class="row">
-											<div class="col-6">
-												<div class="product__card-link_container">
-													<button class="product__card-button">
-														<img src="img/shopping-cart.png" alt="" class="product__card-icon">
-														<span>В корзину</span>
-													</button>
-												</div>
-											</div>
-											<div class="col-6 no-padding-left">
-												<div class="product__card-old-price">34 900</div>
-												<div class="product__card-price">
-													32 100 <span>руб</span>	
-												</div>
-												<div class="product__card-price-ad">
-													за шт.
-												</div>
-											</div>
-										</div>
-									</div>
-								</a>
-							</div>
+							<product-card v-for="(product, index) in discountProducts" :product="product" :key="index"></product-card>
 						</div>
 					</div>
 					<div class="new__products">
@@ -232,117 +113,7 @@
 							Новые поступления
 						</div>
 						<div class="row new__products-list">
-							<div class="col-lg-4 col-md-6 product__card-container">
-								<a href="#" class="product__card">
-									<div class="product__card-image">
-										<img src="img/cotel-1.png" alt="" class="product__card-pic">
-									</div>
-									<div class="product__card-title">
-										Котел напольный BAXI SLIM EF 1.22, энергонезависимый 22 кВт, котел напольный СЛИМ
-									</div>
-									<div class="product__card-bottom">
-										<div class="product__card-art">
-											Артикуль. 00-111-2323-222
-										</div>
-										<div class="product__card-availability available">
-											<span>В наличии</span>
-										</div>
-										<div class="row">
-											<div class="col-6">
-												<div class="product__card-link_container">
-													<button class="product__card-button">
-														<img src="img/shopping-cart.png" alt="" class="product__card-icon">
-														<span>В корзину</span>
-													</button>
-												</div>
-											</div>
-											<div class="col-6 no-padding-left">
-												<div class="product__card-old-price"></div>
-												<div class="product__card-price">
-													12 100 <span>руб</span>	
-												</div>
-												<div class="product__card-price-ad">
-													за шт.
-												</div>
-											</div>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="col-lg-4 col-md-6 product__card-container">
-								<a href="#" class="product__card">
-									<div class="product__card-image">
-										<img src="img/cotel-2.png" alt="" class="product__card-pic">
-									</div>
-									<div class="product__card-title">
-										Котел газовый настенный Viessmann Vitopend 100-W двухконтурный
-									</div>
-									<div class="product__card-bottom">
-										<div class="product__card-art">
-											Артикуль. 00-111-2323-222
-										</div>
-										<div class="product__card-availability available">
-											<span>В наличии</span>
-										</div>
-										<div class="row">
-											<div class="col-6">
-												<div class="product__card-link_container">
-													<button class="product__card-button">
-														<img src="img/shopping-cart.png" alt="" class="product__card-icon">
-														<span>В корзину</span>
-													</button>
-												</div>
-											</div>
-											<div class="col-6 no-padding-left">
-												<div class="product__card-old-price"></div>
-												<div class="product__card-price">
-													47 100 <span>руб</span>	
-												</div>
-												<div class="product__card-price-ad">
-													за шт.
-												</div>
-											</div>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="col-lg-4 col-md-6 product__card-container">
-								<a href="#" class="product__card">
-									<div class="product__card-image">
-										<img src="img/cotel-3.png" alt="" class="product__card-pic">
-									</div>
-									<div class="product__card-title">
-										Котел газовый настенный BOSCH GAZ 4000 W битермический
-									</div>
-									<div class="product__card-bottom">
-										<div class="product__card-art">
-											Артикуль. 00-111-2323-222
-										</div>
-										<div class="product__card-availability available">
-											<span>В наличии</span>
-										</div>
-										<div class="row">
-											<div class="col-6">
-												<div class="product__card-link_container">
-													<button class="product__card-button">
-														<img src="img/shopping-cart.png" alt="" class="product__card-icon">
-														<span>В корзину</span>
-													</button>
-												</div>
-											</div>
-											<div class="col-6 no-padding-left">
-												<div class="product__card-old-price"></div>
-												<div class="product__card-price">
-													32 100 <span>руб</span>	
-												</div>
-												<div class="product__card-price-ad">
-													за шт.
-												</div>
-											</div>
-										</div>
-									</div>
-								</a>
-							</div>
+							<product-card v-for="(product, index) in newProducts" :product="product" :key="index"></product-card>
 						</div>
 					</div>
 					<div class="main__content">
@@ -378,9 +149,17 @@
 
 <script>
 import Vue from 'vue'
+import ProductCard from '../components/ProductCard.vue'
+import { mapGetters } from 'vuex'
 
 export default {
-    name: 'Home'
+	name: 'Home',
+	components: {
+		ProductCard
+	},
+	computed: {
+		...mapGetters('products', ['discountProducts','newProducts'])
+	}
 }
 </script>
 

@@ -1,6 +1,9 @@
 <template>
     <div class="col-lg-4 col-md-6 product__card-container">
 								<a href="#" class="product__card">
+									<div class="product__card-discount" v-if="product.action">
+										<span>-{{ percentAction(product.price, product.newCost) }}%</span>
+									</div>
 									<div class="product__card-image">
 										<img :src="product.img" alt="" class="product__card-pic">
 									</div>
@@ -24,10 +27,18 @@
 												</div>
 											</div>
 											<div class="col-6 no-padding-left">
-												<div class="product__card-old-price"></div>
-												<div class="product__card-price">
-													{{ formatPrice(product.price) }} <span>руб</span>	
-												</div>
+												<template v-if="product.action">
+													<div class="product__card-old-price">{{ formatPrice(product.price) }}</div>
+													<div class="product__card-price">
+														{{ formatPrice(product.newCost) }} <span>руб</span>	
+													</div>
+												</template>
+												<template v-else>
+													<div class="product__card-old-price"></div>
+													<div class="product__card-price">
+														{{ formatPrice(product.price) }} <span>руб</span>	
+													</div>
+												</template>
 												<div class="product__card-price-ad">
 													за шт.
 												</div>
@@ -48,9 +59,12 @@ export default {
     ],
     methods: {
         formatPrice(price) {
-            price = price + '';
+            price += '';
             return price.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')
-        }
+		},
+		percentAction(price, newCost) {
+			return Math.round((price - newCost) / (price / 100)); 
+		}
     }
 }
 </script>

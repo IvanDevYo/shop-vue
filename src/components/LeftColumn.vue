@@ -24,10 +24,7 @@ export default {
     	CatalogMenuItem
 	},
 	computed: {
-		...mapGetters(['categoryes'])
-	},
-	created: function() {
-		this.$store.dispatch('loadCategoryes');
+		...mapGetters('categoryes', ['categoryes'])
 	}
 }
 </script>
