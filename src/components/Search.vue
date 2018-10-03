@@ -9,13 +9,22 @@
 
 <script>
 import Vue from 'vue';
+import { mapGetters } from 'vuex';
 
 export default {
     name: 'Search',
+    data() {
+        return {
+            searchQuery: ""
+        }
+    },
     methods: {
         search() {
             console.log(this.searchQuery);
         }
+    },
+    computed: {
+        ...mapGetters('products', ['search'])
     }
 }
 </script>

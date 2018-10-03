@@ -21,6 +21,10 @@ const getters = {
         }
         return necessaryItems;
     },
+    search: state => query => {
+        let items = state.products;
+        
+    },
     discountProducts(state) {
         let items = state.products,
             necessaryItems = [];

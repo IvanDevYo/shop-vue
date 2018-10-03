@@ -256,7 +256,7 @@
 						</div>
 						<div class="filter__bottom">
 							<div class="filter__founded">
-								Найдено {{ necessaryProducts.length }} товаров
+								Найдено {{ nProducts.length }} товаров
 							</div>
 							<div class="filter__bottom-buttons">
 								<a href="#" class="button-lost">
@@ -295,8 +295,8 @@
 							</div>
 						</div>
 						<div class="row catalog__products-list">
-							<template v-if="necessaryProducts.length">
-								<product-card v-for="(product, index) in necessaryProducts" :product="product" :key="index"></product-card>
+							<template v-if="nProducts.length">
+								<product-card v-for="(product, index) in nProducts" :product="product" :key="index"></product-card>
 							</template>
 							<template v-else>
 								Ничего нет
@@ -371,17 +371,21 @@ export default {
 		}
 	},
 	computed: {
-		currentCategory() {
+		...mapGetters('products',['products','necessaryProducts']),
+		...mapGetters('categoryes',['currentCategory']),
+		nProducts() {
+			return this.necessaryProducts(this.cCategory.id);
+		},
+		cCategory() {
 			const categoryUrl = this.$route.params.category;
-			return this.$store.getters.currentCategory(categoryUrl);
-		},
-		necessaryProducts() {
-			return this.$store.getters.necessaryProducts(this.currentCategory.id);
-		},
-		...mapGetters(['products'])
+			return this.currentCategory(categoryUrl);
+		}
 	},
-	created: function() {
-		this.$store.dispatch('loadProducts');
+	methods: {
+		
+	},
+	created() {
+		this.$store.dispatch('products/loadProducts');
 	}
 } 
 </script>
