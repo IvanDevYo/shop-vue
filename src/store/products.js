@@ -7,13 +7,16 @@ const state = {
 
 const mutations = {
     addProducts(state, data) {
+        for(let i = 0; i < data.length; i++) {
+            data[i].searchName = data[i].name.toLowerCase();
+        }
         state.products = data;
     },
     search(state, query) {
         let items = state.products,
             res = [];
         for(let i = 0; i < items.length; i++) {
-            if(~items[i].name.indexOf(query)) {
+            if(~items[i].searchName.indexOf(query)) {
                 res.push(items[i])
             }
         }
@@ -66,6 +69,16 @@ const getters = {
     },
     products(state) {
         return state.products;
+    },
+    currentProduct: state => url => {
+        let items = state.products,
+            item;
+        for(let i=0; i<items.length; i++) {
+            if (url === items[i].url) {
+                item = items[i];
+            }
+        }
+        return item;
     }
 }
 

@@ -1,6 +1,6 @@
 <template>
     <div class="col-lg-4 col-md-6 product__card-container">
-								<a href="#" class="product__card">
+								<router-link :to="{name: 'product', params: {product: product.url}}" class="product__card">
 									<div class="product__card-discount" v-if="product.action">
 										<span>-{{ percentAction(product.price, product.newCost) }}%</span>
 									</div>
@@ -21,7 +21,7 @@
 											<div class="col-6">
 												<div class="product__card-link_container">
 													<button class="product__card-button">
-														<img src="img/shopping-cart.png" alt="" class="product__card-icon">
+														<img src="/img/shopping-cart.png" alt="" class="product__card-icon">
 														<span>В корзину</span>
 													</button>
 												</div>
@@ -45,7 +45,7 @@
 											</div>
 										</div>
 									</div>
-								</a>
+								</router-link>
 							</div>
 </template>
 

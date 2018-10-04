@@ -383,9 +383,6 @@ export default {
 	},
 	methods: {
 		
-	},
-	created() {
-		this.$store.dispatch('products/loadProducts');
 	}
 } 
 </script>
