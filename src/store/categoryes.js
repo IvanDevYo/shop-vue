@@ -23,6 +23,16 @@ const getters = {
             }
         }
         return item;
+    },
+    productCategory: state => id => {
+        let items = state.categoryes,
+            item;
+        for(let i=0; i<items.length; i++) {
+            if (id === items[i].id) {
+                item = items[i];
+            }
+        }
+        return item;
     }
 }
 

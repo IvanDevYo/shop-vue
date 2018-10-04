@@ -1,15 +1,15 @@
 <template>
     <div class="col-lg-4 col-md-6 product__card-container">
-								<router-link :to="{name: 'product', params: {product: product.url}}" class="product__card">
+								<div class="product__card">
 									<div class="product__card-discount" v-if="product.action">
 										<span>-{{ percentAction(product.price, product.newCost) }}%</span>
 									</div>
 									<div class="product__card-image">
 										<img :src="product.img" alt="" class="product__card-pic">
 									</div>
-									<div class="product__card-title">
+									<router-link :to="{name: 'product', params: {product: product.url, category: cCategory.url}}" class="product__card-title">
 										{{ product.name }}
-									</div>
+									</router-link>
 									<div class="product__card-bottom">
 										<div class="product__card-art">
 											Артикуль. 00-111-2323-222
@@ -20,7 +20,7 @@
 										<div class="row">
 											<div class="col-6">
 												<div class="product__card-link_container">
-													<button class="product__card-button">
+													<button class="product__card-button" @click="addToCart(product.id)">
 														<img src="/img/shopping-cart.png" alt="" class="product__card-icon">
 														<span>В корзину</span>
 													</button>
@@ -45,12 +45,13 @@
 											</div>
 										</div>
 									</div>
-								</router-link>
+								</div>
 							</div>
 </template>
 
 <script>
 import Vue from 'vue'
+import { mapGetters } from 'vuex';
 
 export default {
     name: 'ProductCard',
@@ -64,8 +65,18 @@ export default {
 		},
 		percentAction(price, newCost) {
 			return Math.round((price - newCost) / (price / 100)); 
+		},
+		addToCart(id) {
+			this.$store.commit('cart/addToCart', {id: id, quantity: 1})
+			this.$root.$emit('addedToCart')
 		}
-    }
+	},
+	computed: {
+		...mapGetters('categoryes',['productCategory']),
+		cCategory() {
+			return this.productCategory(this.product.categoryId);
+		}
+	}
 }
 </script>
 

@@ -8,12 +8,12 @@
 							<li class="breadcrumbs-item">
 								<a href="/" class="breadcrumbs-link">Каталог</a>
 							</li>
-							<li class="breadcrumbs-item"><a href="/" class="breadcrumbs-link">{{ currentCategory.name }}</a></li>
+							<li class="breadcrumbs-item"><a href="/" class="breadcrumbs-link">{{ cCategory.name }}</a></li>
 						</ul>
 					</div>
 					<div class="catalog">
 						<div class="catalog-title">
-							{{ currentCategory.name }}
+							{{ cCategory.name }}
 						</div>
 						<div class="catalog__menu_hover">
 							<div class="catalog__menu-item_hover">

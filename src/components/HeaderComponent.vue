@@ -302,15 +302,7 @@
 									+7 (916) 010-28-28
 								</div>
 							</div>
-							<div class="header__card">
-								<a href="#" class="header__card-link">
-									<div class="header__card-text">Моя корзина</div>
-									<div class="header__card-icon">
-										<img src="img/shopping-purse-icon.png" alt="" class="header__card-icon-pic">
-									</div>
-									<div class="header__card-counter">12</div>
-								</a>
-							</div>
+							<header-cart></header-cart>
 						</div>
 					</div>
 				</div>
@@ -328,7 +320,7 @@
 							</nav>
 						</div>
 						<div class="col-lg-5 col-md-6">
-							<search v-on:cl="ss()"></search>
+							<search></search>
 						</div>
 					</div>
 				</div>
@@ -339,16 +331,16 @@
 <script>
 import Vue from 'vue'
 import Search from './Search.vue'
+import HeaderCart from './HeaderCart.vue'
 
 export default {
 	name: 'HeaderComponent',
 	components: {
-		Search
+		Search,
+		HeaderCart
 	},
 	methods: {
-		ss() {
-            console.log(this.searchQuery);
-        }
+		
 	}
 }
 </script>

@@ -79,6 +79,19 @@ const getters = {
             }
         }
         return item;
+    },
+    cartProducts: state => arr => {
+        let items = state.products,
+            necessaryItems = [];
+
+            for(let i = 0; i < arr.length; i++) {
+                let id = arr[i];
+                for(let j = 0; j < items.length; j++) {
+                    if(id === items[j].id) necessaryItems[i] = items[j] 
+                }
+            }
+        
+        return necessaryItems;
     }
 }
 
