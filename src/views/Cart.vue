@@ -1,9 +1,10 @@
 <template>
     <div class="col-lg-9 col-12">
-        <div class="cart__title">Корзина</div>
-        <div class="cart__products row">
+        <div class="catalog-title">Корзина</div>
+        <div class="cart__products row" v-if="cProducts.length">
             <product-card v-for="(product, index) in cProducts" :product="product" :key="index"></product-card>
         </div>
+        <div class="cart__products" v-else>Корзина пуста</div>
     </div>
 </template>
 
