@@ -152,8 +152,3 @@ const sortByDate = function(d1, d2){
 }
 
 </script>
-
-
-<style lang="scss">
-
-</style>

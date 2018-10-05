@@ -180,8 +180,3 @@ import Vue from 'vue';
     name: 'FooterComponent',
   }
 </script>
-
-
-<style lang="scss">
-
-</style>
