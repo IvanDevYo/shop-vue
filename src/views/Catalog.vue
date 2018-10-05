@@ -3,12 +3,12 @@
 					<div class="breadcrumbs">	
 						<ul class="breadcrumbs-list">
 							<li class="breadcrumbs-item">
-								<a href="/" class="breadcrumbs-link">Главная</a>
+								<router-link to="/" class="breadcrumbs-link">Главная</router-link>
 							</li>
 							<li class="breadcrumbs-item">
-								<a href="/" class="breadcrumbs-link">Каталог</a>
+								<router-link :to="{ name: 'catalog', params: cCategory.url }" class="breadcrumbs-link">Каталог</router-link>
 							</li>
-							<li class="breadcrumbs-item"><a href="/" class="breadcrumbs-link">{{ cCategory.name }}</a></li>
+							<li class="breadcrumbs-item"><router-link :to="{ name: 'catalog', params: cCategory.url }" class="breadcrumbs-link">{{ cCategory.name }}</router-link></li>
 						</ul>
 					</div>
 					<div class="catalog">

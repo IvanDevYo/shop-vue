@@ -2,7 +2,7 @@
 <div class="wrap__all">
   <div class="wrapper">
     <header-component></header-component>
-    <content-component v-on:addToCart="s"></content-component>
+    <content-component></content-component>
   </div>
   <footer-component></footer-component>
 </div>
@@ -18,11 +18,6 @@ export default {
     HeaderComponent,
     FooterComponent,
     ContentComponent
-  },
-  methods: {
-    s() {
-      console.log(1)
-    }
   },
 	created: function() {
     this.$store.dispatch('categoryes/loadCategoryes');

@@ -3,16 +3,16 @@
 					<div class="breadcrumbs">	
 						<ul class="breadcrumbs-list">
 							<li class="breadcrumbs-item">
-								<a href="/" class="breadcrumbs-link">Главная</a>
+								<router-link to="/" class="breadcrumbs-link">Главная</router-link>
 							</li>
 							<li class="breadcrumbs-item">
-								<a href="/" class="breadcrumbs-link">Каталог</a>
+								<router-link :to="{ name: 'catalog', params: cCategory.url }" class="breadcrumbs-link">Каталог</router-link>
 							</li>
 							<li class="breadcrumbs-item">
-								<a href="/" class="breadcrumbs-link">{{ cCategory.name }}</a>
+								<router-link :to="{ name: 'catalog', params: cCategory.url }" class="breadcrumbs-link">{{ cCategory.name }}</router-link>
 							</li>
 							<li class="breadcrumbs-item">
-								<a href="/" class="breadcrumbs-link">{{ cProduct.name }}</a>
+								<router-link :to="{ name: 'product', params: {product: cProduct.url, category: cCategory.url} }" class="breadcrumbs-link">{{ cProduct.name }}</router-link>
 							</li>
 						</ul>
 					</div>
@@ -252,12 +252,12 @@
 						</div>
 						<div class="product__tabs">
 							<ul class="tabs__link-list">
-								<li class="tabs__link-item tabs__link_active">
+								<li class="tabs__link-item" :class="activeTab(1)">
 									<a href="#" @click.prevent="showTab(1)" class="tabs__link-link" id="tab1">
 										<span>Описание</span>
 									</a>
 								</li>
-								<li class="tabs__link-item">
+								<li class="tabs__link-item" :class="activeTab(2)">
 									<a href="#" @click.prevent="showTab(2)" class="tabs__link-link" id="tab2">
 										<span>Отзывы</span>
 									</a>
@@ -325,6 +325,12 @@ export default {
 					break
 				}
 			}
+		},
+		activeTab(id) {
+			if (this.tab === id) {
+				return 'tabs__link_active'
+			}
+			return false
 		}
 	},
     computed: {
