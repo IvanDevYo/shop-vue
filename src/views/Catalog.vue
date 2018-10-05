@@ -17,74 +17,7 @@
 						</div>
 					</div>
 					<div class="catalog__products">
-						<div class="catalog__sort">
-							<div class="catalog__sort-title">
-								Сортировать:
-							</div>
-							<div class="catalog__sort-button sort-active">
-								<a href="#" class="catalog__sort-link">
-									По популярности
-								</a>
-							</div>
-							<div class="catalog__sort-button">
-								<a href="#" class="catalog__sort-link">
-									Недавно добавленные
-								</a>
-							</div>
-							<div class="catalog__sort-button">
-								<a href="#" class="catalog__sort-link">
-									Сначала дорогие
-								</a>
-							</div>
-							<div class="catalog__sort-button">
-								<a href="#" class="catalog__sort-link">
-									Сначала дешевые
-								</a>
-							</div>
-						</div>
-						<div class="row catalog__products-list">
-							<template v-if="nProducts.length">
-								<product-card v-for="(product, index) in nProducts" :product="product" :key="index"></product-card>
-							</template>
-							<template v-else>
-								Ничего нет
-							</template>
-						</div>
-						<div class="load__more">
-							<a href="#" class="load__more-link">
-								ПОКАЗАТЬ ЕЩЕ
-							</a>
-						</div>
-						<div class="products__nav">
-							<ul class="products__nav-list">
-								<li class="products__nav-item products__nav-active">
-									<a href="#" class="products__nav-link">
-										<span>1</span>
-									</a>
-								</li>
-								<li class="products__nav-item">
-									<a href="#" class="products__nav-link">
-										<span>2</span>
-									</a>
-								</li>
-								<li class="products__nav-item">
-									<a href="#" class="products__nav-link">
-										<span>3</span>
-									</a>
-								</li>
-								<li class="products__nav-item">
-									<a href="#" class="products__nav-link">
-										<span>4</span>
-									</a>
-								</li>
-								<li class="products__nav-separator">...</li>
-								<li class="products__nav-item">
-									<a href="#" class="products__nav-link">
-										<span>14</span>
-									</a>
-								</li>
-							</ul>
-						</div>
+						<pagination :size="9"></pagination>		
 						<div class="main__content catalog__main__content">
 							<div class="main__content-title">
 								Интернет-магазин инженерной сантехники
@@ -106,12 +39,12 @@
 </template>
 <script>
 import Vue from 'vue'
-import ProductCard from '../components/ProductCard.vue'
+import Pagination from '../components/Pagination.vue'
 import { mapGetters } from 'vuex';
 export default {
 	name: 'Catalog',
 	components: {
-		ProductCard
+		Pagination
 	},
 	data() {
 		return {
@@ -119,15 +52,11 @@ export default {
 		}
 	},
 	computed: {
-		...mapGetters('products',['products','necessaryProducts']),
 		...mapGetters('categoryes',['currentCategory']),
-		nProducts() {
-			return this.necessaryProducts(this.cCategory.id);
-		},
 		cCategory() {
 			const categoryUrl = this.$route.params.category;
 			return this.currentCategory(categoryUrl);
-		}
+		},
 	},
 	methods: {
 		
