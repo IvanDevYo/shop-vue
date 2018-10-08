@@ -1,28 +1,20 @@
 <template>
-    <div class="review-item">
-        <div class="review-text">{{ rev.text }}</div>
-    </div>
+<div class="review-item">
+    <div class="review-text">{{ rev.text }}</div>
+</div>
 </template>
 
 <script>
-import Vue from 'vue';
-import { mapGetters } from 'vuex';
+import Vue from "vue";
+import {
+    mapGetters
+} from "vuex";
 
 export default {
-    name: 'ReviewItem',
-    props: [
-        'rev'
-    ],
+    name: "ReviewItem",
+    props: ["rev"],
     data() {
-        return {
-            
-        }
-    },
-    methods: {
-        
-    },
-    computed: {
-        
+        return {};
     }
-}
+};
 </script>
