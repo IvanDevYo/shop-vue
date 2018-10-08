@@ -5,6 +5,7 @@ import Catalog from './views/Catalog.vue'
 import Product from './views/Product.vue'
 import SearchResults from './views/SearchResults.vue'
 import Cart from './views/Cart.vue'
+import About from './views/About.vue'
 
 Vue.use(VueRouter);
 
@@ -31,6 +32,11 @@ const routes = [
     { 
         path: '/cart',
         component: Cart 
+    },
+    { 
+        path: '/:page',
+        name: 'about',
+        component: About 
     }
 ]
 

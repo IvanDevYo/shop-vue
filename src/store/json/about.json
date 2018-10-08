@@ -1,0 +1,34 @@
+{
+    "data": [
+        {
+            "page": "about-us",
+            "title": "О нас",
+            "content": "Lorem100013213dsfajdhaflhdfjahdflkjahdfljhadskfjhadkfhadkhfadh"
+        },
+        {
+            "page": "brends",
+            "title": "Каталог брендов",
+            "content": "Каталог брендов"
+        },
+        {
+            "page": "services",
+            "title": "Услуги",
+            "content": "фвафвафыва"
+        },
+        {
+            "page": "pay",
+            "title": "Оплата",
+            "content": "фвафвафыва"
+        },
+        {
+            "page": "delivery",
+            "title": "Доставка",
+            "content": "фвафвафыва"
+        },
+        {
+            "page": "contacts",
+            "title": "Контакты",
+            "content": "фвафвафыва"
+        }
+    ]
+}

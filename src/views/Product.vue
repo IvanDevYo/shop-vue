@@ -243,9 +243,6 @@
 												</div>
 											</div>
 										</div>
-										<a href="#" class="product__read__more-link">
-											ПОКАЗАТЬ ВСЕ ХАРАКТЕРИСТИКИ
-										</a>
 									</div>
 								</div>
 							</div>
@@ -274,16 +271,12 @@
 									Тип 	газовый Тип установки 	настенный Мощность, кВт 	24 MAX температура ГВС 	+60 MAX температура отопления, °C 	+82 Погодозависимое управление 	нет
 								</div>
 								<div class="tabs__content-item" id="tab__content2" v-show="tab === 2">
-									Отзывы
+									<review-item v-for="(rev, index) in allReviews" :rev="rev" :key="index"></review-item>
+									<form action="">
+										<input type="text" v-model="review">
+										<input type="submit" value="Отправить" @click.prevent="addToReviews()">
+									</form>
 								</div>
-							</div>
-						</div>
-						<div class="product__analogs">
-							<div class="title_aftered">
-								Аналоги
-							</div>
-							<div class="row analog__products-list">
-								
 							</div>
 						</div>
 					</div>
@@ -293,13 +286,18 @@
 <script>
 import Vue from 'vue'
 import { mapGetters } from 'vuex'
+import ReviewItem from '../components/ReviewItem.vue'
 
 export default {
 	name: 'Product',
+	components: {
+		ReviewItem
+	},
 	data() {
 		return {
 			tab: 1,
-			quantity: 1
+			quantity: 1,
+			review: ''
 		}
 	},
 	methods: {
@@ -309,6 +307,11 @@ export default {
 		},
 		showTab(tabId) {
 			this.tab = tabId
+		},
+		addToReviews() {
+			this.$store.commit('reviews/addReview', {text: this.review, id: this.cProduct.id})
+			console.log(this.review)
+			this.review = ''
 		},
 		addToCart(id, quantity) {
 			this.$store.commit('cart/addToCart', {id: id, quantity: quantity})
@@ -336,6 +339,7 @@ export default {
     computed: {
 		...mapGetters('products', ['currentProduct']),
 		...mapGetters('categoryes', ['productCategory']),
+		...mapGetters('reviews', ['getReviews']),
         cProduct() {
 			const productUrl = this.$route.params.product;
 			return this.currentProduct(productUrl);
@@ -343,6 +347,9 @@ export default {
 		cCategory() {
 			return this.productCategory(this.cProduct.categoryId);
 		},
+		allReviews() {
+			return this.getReviews(this.cProduct.id);
+		}
     }
 }
 </script>

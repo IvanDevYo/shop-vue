@@ -22,6 +22,7 @@ export default {
 	created: function() {
     this.$store.dispatch('categoryes/loadCategoryes');
     this.$store.dispatch('products/loadProducts');
+    this.$store.dispatch('about/loadAbouts');
 	}
 }
 </script>

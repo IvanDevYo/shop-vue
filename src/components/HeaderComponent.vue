@@ -4,15 +4,12 @@
 				<div class="container flx">
 					<nav class="top__nav-nav">
 						<ul class="top__nav-list">
-							<li class="top__nav-item sm"><a href="#" class="top__nav-link">Инженерка</a></li>
-							<li class="top__nav-item sm"><a href="#" class="top__nav-link">Санфаянс</a></li>
-							<li class="top__nav-item sm"><a href="#" class="top__nav-link">Проектирование</a></li>
-							<li class="top__nav-item"><a href="#" class="top__nav-link">О компании</a></li>
-							<li class="top__nav-item"><a href="#" class="top__nav-link">Каталог брендов</a></li>
-							<li class="top__nav-item"><a href="#" class="top__nav-link">Услуги</a></li>
-							<li class="top__nav-item"><a href="#" class="top__nav-link">Оплата</a></li>
-							<li class="top__nav-item"><a href="#" class="top__nav-link">Доставка</a></li>
-							<li class="top__nav-item"><a href="#" class="top__nav-link">Контакты</a></li>
+							<li class="top__nav-item"><router-link :to="{ name: 'about', params: {page: 'about-us'} }" class="top__nav-link">О компании</router-link></li>
+							<li class="top__nav-item"><router-link :to="{ name: 'about', params: {page: 'brends'} }" class="top__nav-link">Каталог брендов</router-link></li>
+							<li class="top__nav-item"><router-link :to="{ name: 'about', params: {page: 'services'} }" class="top__nav-link">Услуги</router-link></li>
+							<li class="top__nav-item"><router-link :to="{ name: 'about', params: {page: 'pay'} }" class="top__nav-link">Оплата</router-link></li>
+							<li class="top__nav-item"><router-link :to="{ name: 'about', params: {page: 'delivery'} }" class="top__nav-link">Доставка</router-link></li>
+							<li class="top__nav-item"><router-link :to="{ name: 'about', params: {page: 'contacts'} }" class="top__nav-link">Контакты</router-link></li>
 						</ul>
 					</nav>
 					<div class="mobile__menu">
