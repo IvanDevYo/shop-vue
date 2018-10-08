@@ -96,17 +96,6 @@
 											<span>В корзину</span>
 										</a>
 									</div>
-									<div class="pay__method">
-										<div class="pay__method-title">
-											Способы оплаты:
-										</div>
-										<a href="#" class="pay__method-link pay-active">
-											<span>Наличные</span>
-										</a>
-										<a href="#" class="pay__method-link">
-											<span>Безнал</span>
-										</a>
-									</div>
 									<div class="characteristics">
 										<div class="characteristics-title">
 											ХАРАКТЕРИСТИКИ:

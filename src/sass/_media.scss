@@ -256,6 +256,16 @@
 		}
 	}
 
+	.fade-enter-active, .fade-leave-active {
+		transition: .6s;
+		transform:  translateY(0%);
+		opacity: 1;
+	  }
+	  .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+		transform:  translateY(-150%);
+		opacity: 0;
+	  }
+
 	.mobile__catalog__menu-nav {
 		display: block;	
 		position: absolute;
@@ -264,13 +274,6 @@
 		left: 0;
 		background-color: #3b3b3b;
 		z-index: 1;
-		transition: .6s;
-		transform:  translateY(-150%);
-		opacity: 0;
-		&.active {
-			transform:  translateY(0%);
-			opacity: 1;
-		}
 	}
 
 	.drop_popup {

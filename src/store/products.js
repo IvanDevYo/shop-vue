@@ -7,20 +7,18 @@ const state = {
 
 const mutations = {
     addProducts(state, data) {
-        for(let i = 0; i < data.length; i++) {
-            data[i].searchName = data[i].name.toLowerCase();
-        }
         state.products = data;
     },
     search(state, query) {
         let items = state.products,
-            res = [];
+            res = [],
+            reg = new RegExp(query, 'i')
+        query = query.toLowerCase();
         for(let i = 0; i < items.length; i++) {
-            if(~items[i].searchName.indexOf(query)) {
+            if(~items[i].name.search(reg)) {
                 res.push(items[i])
             }
         }
-        console.log(res)
         state.results = res;
     }
 }

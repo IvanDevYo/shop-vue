@@ -18,5 +18,4 @@ export const store = new Vuex.Store({
         reviews,
         about
     },
-    strict: process.env.NODE_ENV !== 'production'
 });

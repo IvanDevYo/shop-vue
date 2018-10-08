@@ -15,13 +15,15 @@ export default {
     name: 'Search',
     data() {
         return {
-            searchQuery: ""
+            searchQuery: ''
         }
     },
     methods: {
         search() {
             this.$store.commit('products/search', this.searchQuery)
-            this.$router.push('search')
+            this.$router.push('/search')
+            this.searchQuery = ''
+            
         }
     },
     computed: {
