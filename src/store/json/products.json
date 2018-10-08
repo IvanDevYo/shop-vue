@@ -26,7 +26,7 @@
         },
         {
             "id":2,
-            "categoryId": 1,
+            "categoryId": 2,
             "name":"Котел 2",
             "price":120100,
             "quantity": 1,
@@ -62,7 +62,7 @@
         },
         {
             "id":5,
-            "categoryId": 1,
+            "categoryId": 3,
             "name":"Котел 3",
             "price":120100,
             "quantity": 1,
@@ -74,7 +74,7 @@
         },
         {
             "id":6,
-            "categoryId": 1,
+            "categoryId": 3,
             "name":"Котел 3",
             "price":120100,
             "quantity": 1,
@@ -86,7 +86,7 @@
         },
         {
             "id":7,
-            "categoryId": 1,
+            "categoryId": 4,
             "name":"Котел 3",
             "price":120100,
             "quantity": 1,
@@ -98,7 +98,7 @@
         },
         {
             "id":8,
-            "categoryId": 1,
+            "categoryId": 4,
             "name":"Котел 3",
             "price":120100,
             "quantity": 1,
@@ -110,7 +110,7 @@
         },
         {
             "id":9,
-            "categoryId": 1,
+            "categoryId": 6,
             "name":"Котел 3",
             "price":120100,
             "quantity": 1,
@@ -122,7 +122,7 @@
         },
         {
             "id":10,
-            "categoryId": 1,
+            "categoryId": 6,
             "name":"Котел 3",
             "price":120100,
             "quantity": 1,
@@ -134,7 +134,7 @@
         },
         {
             "id":11,
-            "categoryId": 1,
+            "categoryId": 6,
             "name":"Котел 3",
             "price":120100,
             "quantity": 1,
@@ -146,7 +146,7 @@
         },
         {
             "id":12,
-            "categoryId": 1,
+            "categoryId": 7,
             "name":"Котел 3",
             "price":230100,
             "quantity": 1,
@@ -170,7 +170,7 @@
         },
         {
             "id":14,
-            "categoryId": 1,
+            "categoryId": 9,
             "name":"Котел 3",
             "price":120100,
             "quantity": 1,
@@ -182,7 +182,7 @@
         },
         {
             "id":15,
-            "categoryId": 1,
+            "categoryId": 9,
             "name":"Котел 3",
             "price":121100,
             "quantity": 1,

@@ -310,9 +310,9 @@
 						<div class="col-lg-7 col-md-6">
 							<nav class="bottom__nav">
 								<ul class="bottom__nav-list">
-									<li class="bottom__nav-item"><a href="#" class="bottom__nav-link">ИНЖЕНЕРКА</a></li>
-									<li class="bottom__nav-item"><a href="#" class="bottom__nav-link">САНФАЯНС</a></li>
-									<li class="bottom__nav-item"><a href="#" class="bottom__nav-link">ПРОЕКТИРОВАНИЕ</a></li>
+									<li class="bottom__nav-item"><div class="bottom__nav-link">ИНЖЕНЕРКА</div></li>
+									<li class="bottom__nav-item"><div class="bottom__nav-link">САНФАЯНС</div></li>
+									<li class="bottom__nav-item"><div class="bottom__nav-link">ПРОЕКТИРОВАНИЕ</div></li>
 								</ul>
 							</nav>
 						</div>
